@@ -11,9 +11,7 @@ namespace AdventCode
             int[] numberList = new int[2000];
 
             int previousNumber = 0;
-            int previousSum = 0;
             int currentNumber = 0;
-            int currentSum = 0;
             int numberCount = 0;
             int sumCount = 0;
 
@@ -36,15 +34,17 @@ namespace AdventCode
             }
 
             i = 0;
+            previousNumber = 0;
+            currentNumber = 0;
 
             while (i < 1998) {
-                currentSum = numberList[i] + numberList[i + 1] + numberList[i + 2];
+                currentNumber = numberList[i] + numberList[i + 1] + numberList[i + 2];
 
-                if (i > 0 && currentSum > previousSum) {
+                if (i > 0 && currentNumber > previousNumber) {
                     sumCount++;
                 }
 
-                previousSum = currentSum;
+                previousNumber = currentNumber;
                 i++;
             }
 
